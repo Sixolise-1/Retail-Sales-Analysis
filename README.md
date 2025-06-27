@@ -50,3 +50,82 @@ The dataset represents over 2,000 retail transactions and includes the following
 SELECT COUNT(*) FROM retail_sales;
 DELETE FROM retail_sales
 WHERE transactions_id IS NULL OR sale_date IS NULL OR ...;
+```
+## Key Business Questions Answered
+**1. How many unique customers are in the dataset?**
+```sql
+SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
+```
+**2. What are the available product categories?**
+```sql
+SELECT DISTINCT category FROM retail_sales;
+```
+**3. What were the total sales and order counts by category?**
+```sql
+SELECT category, SUM(total_sale) AS net_sale, COUNT(*) AS total_orders
+FROM retail_sales
+GROUP BY category;
+```
+**4. What is the average age of customers purchasing Beauty products?**
+```sql
+SELECT ROUND(AVG(age), 2) AS average_age
+FROM retail_sales
+WHERE category = 'Beauty';
+```
+**5. Which transactions had sales greater than R1000?**
+```sql
+SELECT * FROM retail_sales
+WHERE total_sale > 1000;
+```
+**6. What is the total number of transactions by gender and category?**
+```sql
+SELECT category, gender, COUNT(*) AS total_trans
+FROM retail_sales
+GROUP BY category, gender;
+```
+**7. What is the best-performing month (by avg sales) in each year?**
+```sql
+WITH ranked_sales AS (
+    SELECT 
+        FORMAT(sale_date, 'yyyy') AS year,
+        FORMAT(sale_date, 'MM') AS month,
+        AVG(total_sale) AS avg_sale,
+        RANK() OVER (PARTITION BY FORMAT(sale_date, 'yyyy') ORDER BY AVG(total_sale) DESC) AS rank
+    FROM retail_sales
+    GROUP BY FORMAT(sale_date, 'yyyy'), FORMAT(sale_date, 'MM')
+)
+SELECT year, month, avg_sale
+FROM ranked_sales
+WHERE rank = 1;
+```
+**8. Who are the top 5 customers by total sales?**
+```sql
+SELECT TOP 5 customer_id, SUM(total_sale) AS total_sales
+FROM retail_sales
+GROUP BY customer_id
+ORDER BY total_sales DESC;
+```
+**9. How many unique customers purchased from each category?**
+```sql
+SELECT category, COUNT(DISTINCT customer_id) AS unique_customers
+FROM retail_sales
+GROUP BY category;
+```
+**10. How are orders distributed across daily shifts (Morning, Afternoon, Evening)?**
+```sql
+WITH hourly_sales AS (
+    SELECT *,
+        CASE
+            WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
+            WHEN DATEPART(HOUR, sale_time) BETWEEN 12 AND 17 THEN 'Afternoon'
+            ELSE 'Evening'
+        END AS shift
+    FROM retail_sales
+)
+SELECT shift, COUNT(*) AS total_orders
+FROM hourly_sales
+GROUP BY shift;
+```
+## 📈 Sample Insights
+
+
