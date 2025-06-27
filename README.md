@@ -127,5 +127,35 @@ FROM hourly_sales
 GROUP BY shift;
 ```
 ## 📈 Sample Insights
+- The Clothing category had the highest number of orders.
+- Afternoon shift had the most transactions.
+- Customer ID 18397 was the top spender.
+- The best-performing month in 2022 was November.
+- Beauty customers have an average age of around 34.87 years.
+
+## 💡What I learned
+- Writing advanced SQL queries using RANK(), DATEPART(), and CASE statements
+- Efficiently importing data using SSMS and cleaning it using SQL
+- Performing meaningful business analysis without using any visualization tools
+- Using both VSCode and SSMS together to manage and analyze SQL data
+
+## How to Run the Project
+**1. Clone or download the repo**
+**2. Open the .sql files in VSCode or SSMS**
+**3. Run 01_create_table.sql to create and populate the retail_sales table**
+**4.Run 02_analysis_queries.sql to explore the dataset and generate insights**
+
+## 👤 Author
+**Sixolise Ntontela**
+- **📚 BSc Computer Science (UWC) graduate, pursuing PGDip in Data Analytics and Business Intelligence(UWC)**
+- **📍 South Africa**
+- **📧 sixolisentontela@gmail.com**
+
+
+
+
+
+
+
 
 
