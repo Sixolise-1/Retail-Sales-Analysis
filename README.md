@@ -131,7 +131,7 @@ GROUP BY shift;
 - Afternoon shift had the most transactions.
 - Customer ID 18397 was the top spender.
 - The best-performing month in 2022 was November.
-- Beauty customers have an average age of around 34.87 years.
+- Beauty customers have an average age of around 40 years.
 
 ## 💡What I learned
 - Writing advanced SQL queries using RANK(), DATEPART(), and CASE statements
@@ -140,10 +140,10 @@ GROUP BY shift;
 - Using both VSCode and SSMS together to manage and analyze SQL data
 
 ## How to Run the Project
-- 1. Clone or download the repo
-- 2. Open the .sql files in VSCode or SSMS
-- 3. Run 01_create_table.sql to create and populate the retail_sales table
-- 4. Run 02_analysis_queries.sql to explore the dataset and generate insights
+- Clone or download the repo
+- Open the .sql files in VSCode or SSMS
+- Run 01_create_table.sql to create and populate the retail_sales table
+- Run 02_analysis_queries.sql to explore the dataset and generate insights
 
 ## 👤 Author
 **Sixolise Ntontela**
