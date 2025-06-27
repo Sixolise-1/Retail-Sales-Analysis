@@ -8,8 +8,8 @@ This SQL project demonstrates how to clean, explore, and analyze real-world reta
 
 | File                            | Description                                       |
 |---------------------------------|---------------------------------------------------|
-| `01_create_table.sql`           | Script to create and populate the `retail_sales` table |
-| `02_analysis_queries.sql`       | Data cleaning, exploration, and analysis queries  |
+| `SQLQuery1_importing.sql`           | Script to create and populate the `retail_sales` table |
+| `Project1_Data_Analysis.sql`       | Data cleaning, exploration, and analysis queries  |
 | `SQL - Retail Sales Analysis_utf.csv` | Raw data file imported into SQL Server |
 
 ---
@@ -128,9 +128,9 @@ GROUP BY shift;
 ```
 ## 📈 Sample Insights
 - The Clothing category had the highest number of orders.
-- Afternoon shift had the most transactions.
-- Customer ID 18397 was the top spender.
-- The best-performing month in 2022 was November.
+- Evening shift had the most transactions.
+- Customer ID 3 was the top spender.
+- The best-performing months in 2022 and 2023 are July and February respectfully.
 - Beauty customers have an average age of around 40 years.
 
 ## 💡What I learned
@@ -142,8 +142,8 @@ GROUP BY shift;
 ## How to Run the Project
 - Clone or download the repo
 - Open the .sql files in VSCode or SSMS
-- Run 01_create_table.sql to create and populate the retail_sales table
-- Run 02_analysis_queries.sql to explore the dataset and generate insights
+- Run `SQLQuery1_importing.sql` to create and populate the retail_sales table
+- Run `Project1_Data_Analysis.sql` to explore the dataset and generate insights
 
 ## 👤 Author
 **Sixolise Ntontela**
