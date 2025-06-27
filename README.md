@@ -143,7 +143,7 @@ GROUP BY shift;
 **1. Clone or download the repo**
 **2. Open the .sql files in VSCode or SSMS**
 **3. Run 01_create_table.sql to create and populate the retail_sales table**
-**4.Run 02_analysis_queries.sql to explore the dataset and generate insights**
+**4. Run 02_analysis_queries.sql to explore the dataset and generate insights**
 
 ## 👤 Author
 **Sixolise Ntontela**
